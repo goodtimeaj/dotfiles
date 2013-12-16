@@ -21,7 +21,7 @@
   pr = !hub pull-request
   isave = !sh -c 'git add --all :/ && git commit -m ''Minor\\ changes'' && git push' -
   msave = !sh -c 'git add --all :/ && git commit -m ''Moar'' && git push' -
-  tsave = !sh -c 'git add --all :/ && git commit -m ''Fix typo'' && git push' -
+  tsave = !sh -c 'git add --all :/ && git commit -m ''Fix\\ typo'' && git push' -
   ls = config --list
   ref = reflog
   rem = remote
