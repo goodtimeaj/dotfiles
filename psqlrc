@@ -1,0 +1,11 @@
+\set QUIET ON
+
+\set HISTSIZE 2000
+
+\timing
+\encoding unicode
+
+\pset null 'NULL'
+\pset border 2
+
+\set QUIET OFF

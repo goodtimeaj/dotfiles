@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# usage: vbox-clone <path of .vdi>
+# Clone the VirtualBox image in the given path to a default save location.
+
+file_path=`find "$1" -name *.vdi`
+
+if [ -n "$file_path" ]; then
+  file_path="$(pwd)/${file_path}"
+
+  echo "Enter a new file name (without an extension)"
+  read NEW_FILE_NAME
+
+  vm_dir="$HOME/VirtualBox VMs"
+  saved_vms_dir="$HOME/VirtualBox VMs/saved"
+
+  # Create the VirtualBox VMs directory and the saved VMs directories if they
+  # do not exist yet
+  if [ ! -d "$vm_dir" ]; then
+    mkdir "$vm_dir"
+  fi
+
+  if [ ! -d "$save_vms_dir" ]; then
+    mkdir "$saved_vms_dir"
+  fi
+
+  new_file_path="${saved_vms_dir}/${new_file_name}-$(date +%s).vdi"
+
+  vboxmanage clonehd --format VDI "$file_path" "$new_file_path"
+fi

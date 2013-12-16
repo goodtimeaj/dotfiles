@@ -1,0 +1,35 @@
+# vim:ft=ruby:
+#
+# `.aprc` modified defaults.
+
+AwesomePrint.defaults = {
+  :indent     => 2,      # Indent using 2 spaces
+  :index      => true,   # Display array indices
+  :html       => false,  # Use ANSI color codes rather than HTML
+  :multiline  => true,   # Display in multiple lines
+  :plain      => false,  # Use colors
+  :raw        => false,  # Do not recursively format object instance variables
+  :sort_keys  => true,   # Sort hash keys
+  :limit      => false,  # Limit large output for arrays and hashes. Set to a boolean or integer
+  :color => {
+    :args       => :pale,
+    :array      => :white,
+    :bigdecimal => :blue,
+    :class      => :yellow,
+    :date       => :greenish,
+    :falseclass => :red,
+    :fixnum     => :blue,
+    :float      => :blue,
+    :hash       => :pale,
+    :keyword    => :cyan,
+    :method     => :purpleish,
+    :nilclass   => :red,
+    :rational   => :blue,
+    :string     => :yellowish,
+    :struct     => :pale,
+    :symbol     => :cyanish,
+    :time       => :greenish,
+    :trueclass  => :green,
+    :variable   => :cyanish
+  }
+}

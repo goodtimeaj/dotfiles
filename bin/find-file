@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# usage: find-file <search>
+# Find filenames only from within the current directory, ignoring searching
+# within selected directories.
+
+find . -name "*$@*" ! -type d | \grep -v '/.git'

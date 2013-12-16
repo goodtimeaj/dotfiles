@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# usage: psg <executable>
+# Shows the currently running processes for an executable.
+#
+# Thanks:
+# @mojombo
+
+ps wwwaux | egrep "($1|%CPU)" | grep -v grep

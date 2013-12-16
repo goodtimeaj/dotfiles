@@ -1,0 +1,64 @@
+# Always color, even if piping to another program
+--color
+
+# Colors
+# --color-filename=bold green
+# --color-lineno=bold red
+# --color-match=bold magenta
+
+# Sort filenames lexically so multiple ack runs produce the same output
+--sort-files
+
+# Search case-sensitive if there is any mixed case
+--smart-case
+
+# Follow symlinks
+--follow
+
+# Use less as the pager unless the output can be displayed on a single screen
+--pager=less -iFNQRX
+
+# Ignore directories
+--ignore-dir=log
+--ignore-dir=tmp
+--ignore-dir=coverage
+--ignore-dir=node_modules
+--ignore-dir=.sass-cache
+
+# Ignore files
+--ignore-file=is:npm-debug.log
+--ignore-file=is:.netrwhist
+--ignore-file=is:tags
+--ignore-file=is:TAGS
+
+# Set types that ack doesn't know about
+--type-set=markdown=.md,.markdown,.mkd
+--type-set=xcode=.pbxproj,.pbxuser,.perspectivev3
+--type-set=plist=.plist
+--type-set=textile=.textile
+--type-set=cucumber=.feature
+--type-set=haml=.haml
+--type-set=rdoc=.rdoc
+
+# Add types to known types
+
+--type-add=js=.coffee
+--type-add=js=.json
+
+--type-add=css=.sass
+--type-add=css=.scss
+--type-add=css=.less
+
+--type-add=html=.html.erb
+--type-add=html=.html.haml
+
+--type-add=ruby=.haml
+--type-add=ruby=.rake
+--type-add=ruby=Rakefile
+--type-add=ruby=.ru
+--type-add=ruby=.thor
+--type-add=ruby=Thorfile
+--type-add=ruby=.rabl
+--type-add=ruby=.builder
+
+--type-add=vim=.vimrc

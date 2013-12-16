@@ -1,0 +1,5 @@
+.mode column
+.headers ON
+.separator ","
+.nullvalue "NULL"
+.timer ON

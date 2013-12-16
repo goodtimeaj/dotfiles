@@ -1,0 +1,10 @@
+---
+# gem env help
+# https://github.com/rubygems/rubygems/blob/master/lib/rubygems/config_file.rb
+install: --no-document
+update: --no-document
+:backtrace: false
+:update_sources: true
+:sources:
+- https://rubygems.org
+:verbose: true

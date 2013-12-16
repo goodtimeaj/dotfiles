@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# usage: phpserver [<port=4000>]
+# Start a PHP server from a directory, optionally specifying the port.
+#
+# Thanks:
+# @sindresorhus
+# @mathiasbynens
+
+port="${1:-4000}"
+ip=$(ipconfig getifaddr en1)
+sleep 1 && open "http://${ip}:${port}/" &
+php -S "${ip}:${port}"

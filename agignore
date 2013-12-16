@@ -1,0 +1,10 @@
+#
+# `ag` also sources `.gitignore` and `.hgignore`
+#
+
+log
+*.log
+tmp
+coverage
+node_modules
+.sass-cache

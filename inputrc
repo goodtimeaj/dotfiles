@@ -1,0 +1,116 @@
+#
+# Thanks:
+# @airblade
+# @mathiasbynens
+# @gf3
+#
+
+###############################################################################
+# Editing
+###############################################################################
+
+# Use Emacs-style bindings (default)
+set editing-mode emacs
+
+# Punctuation as word delimiters
+# set bind-tty-special-chars off
+
+$if Bash
+  # Do history expansion with <space>
+  # !!<space> will replace !! with the last command
+  Space: magic-space
+$endif
+
+# Make control-tab complete from history
+# C-TAB: dynamic-complete-history
+
+# Kill whole line with `C-d`
+# Too dangerous since this also signals logout
+# "\C-d": kill-whole-line
+
+###############################################################################
+# Appearance
+###############################################################################
+
+# No visual or audible bells
+set bell-style none
+
+# Show matching parentheses
+# set blink-matching-paren on
+
+# Allow UTF-8 input and output, instead of showing stuff like $'\0123\0456'
+# set input-meta on
+# set output-meta on
+# set convert-meta off
+
+# set meta-flag on
+
+# Don't display control characters like ^C
+# set echo-control-characters Off
+
+###############################################################################
+# Autocompletion
+###############################################################################
+
+# Autocompletion is not case-sensitive
+set completion-ignore-case on
+
+# Immediately add a trailing slash when autocompleting directories (default)
+set mark-directories on
+
+# Immediately add a trailing slash when autocompleting symlinks to directories
+set mark-symlinked-directories on
+
+# List all matches in case multiple possible completions are possible
+# set show-all-if-ambiguous on
+# set show-all-if-unmodified on
+
+# Treat underscores and hyphens the same way for completion purposes
+set completion-map-case on
+
+# Expand tilde to full path on completion
+# set expand-tilde on
+
+# Do not autocomplete hidden files unless the pattern explicitly begins with a dot
+# set match-hidden-files off
+
+# Show all autocomplete results at once
+# set page-completions off
+
+# If there are more than 200 possible completions for a word, ask to show them all
+# set completion-query-items 200
+
+# Show extra file type when listing possible completions
+set visible-stats on
+
+# Print completions vertically
+# set print-completions-horizontally off
+
+# Common completion prefixes longer than this will display an ellipsis instead
+# of the full text
+# set completion-prefix-display-length 10
+
+# Be more intelligent when autocompleting by also looking at the text after
+# the cursor. For example, when the current line is "cd ~/src/mozil", and
+# the cursor is on the "z", pressing Tab will not autocomplete it to "cd
+# ~/src/mozillail", but to "cd ~/src/mozilla". (This is supported by the
+# Readline used by Bash 4.)
+set skip-completed-text on
+
+# Make TAB cycle through possible completions
+# Do not use with `show-all-if-ambiguous`
+"\t": menu-complete
+
+# Make SHIFT-TAB reverse cycle through possible completions
+"\e[Z": "\e-1\C-i"
+
+###############################################################################
+# Other
+###############################################################################
+
+# Remember the last history cycle point
+# set history-preserve-point on
+
+# Include system wide settings which are ignored by default if one has their
+# own .inputrc
+# $include /etc/inputrc

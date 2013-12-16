@@ -1,0 +1,40 @@
+[push]
+  default = current
+[color]
+  ui = auto
+  diff = auto
+  status = auto
+  branch = auto
+[alias]
+  a = add
+  aa = add --all :/
+  ap = add --patch
+  ca = commit --amend
+  ci = commit -v
+  cl = clone
+  co = checkout
+  create-branch = !sh -c 'git push origin HEAD:refs/heads/$1 && git fetch origin && git branch --track $1 origin/$1 && cd . && git checkout $1' -
+  delete-branch = !sh -c 'git push origin :refs/heads/$1 && git remote prune origin && git branch -D $1' -
+  delete-last-commit = reset --hard HEAD~1
+  in = init
+  merge-branch = !git checkout master && git merge @{-1}
+  pr = !hub pull-request
+  isave = !sh -c 'git add --all :/ && git commit -m ''Minor\\ changes'' && git push' -
+  msave = !sh -c 'git add --all :/ && git commit -m ''Moar'' && git push' -
+  tsave = !sh -c 'git add --all :/ && git commit -m ''Fix typo'' && git push' -
+  ls = config --list
+  ref = reflog
+  rem = remote
+  remove-sensitive-file = !sh -c 'git filter-branch --force --index-filter ''git rm --cached --ignore-unmatch $1'' --prune-empty --tag-name-filter cat -- --all' -
+  res = reset
+  st = status
+  sub = submodule
+  sub-update = submodule foreach git pull
+  sub-update-origin = submodule foreach git pull origin master
+  undo-last-commit = reset --soft HEAD~1
+  up = !git fetch origin && git rebase origin/master
+[core]
+  excludesfile = ~/.gitignore
+  autocrlf = input
+[include]
+  path = .gitconfig.local

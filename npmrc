@@ -1,0 +1,7 @@
+email = gregstallings@gmail.com
+username = gregstallings
+init.author.email = gregstallings@gmail.com
+init.author.name = Greg Stallings
+init.licenses.type = MIT
+init.licenses.url = http://opensource.org/licenses/MIT
+loglevel = info

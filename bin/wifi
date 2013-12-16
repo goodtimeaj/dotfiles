@@ -1,0 +1,120 @@
+#!/usr/bin/env bash
+# usage: See `print_commands()`
+# Intermediary interface to OS X Wi-Fi functionality.
+
+INTERFACE="en1"
+
+print_usage() {
+  cat << EOF
+usage: wifi [--list] <command> [<args>]
+EOF
+}
+
+print_commands() {
+  cat << EOF
+
+Commands:
+  current    [<interface>]               Display the currently connected wifi network
+  list       [<interface>]               List all preferred wireless networks
+  network    <SSID> [<interface>]        Connect to the given wifi network by SSID
+  power      <on | off> [<interface>]    Turn wifi on or off
+  on         [<interface>]               Turn wifi on
+  off        [<interface>]               Turn wifi off
+  remove     <SSID> [<interface>]        Remove the given wifi network by SSID
+  status     [<interface>]               Display wifi device status (on/off) and also
+                                         the currently connected wifi network
+EOF
+}
+
+power() {
+  networksetup -setairportpower ${2:-"$INTERFACE"} "$1"
+}
+
+network() {
+  networksetup -setairportnetwork ${2:-"$INTERFACE"} "$1"
+}
+
+current() {
+  networksetup -getairportnetwork ${1:-"$INTERFACE"}
+}
+
+list() {
+  networksetup -listpreferredwirelessnetworks ${1:-"$INTERFACE"}
+}
+
+remove() {
+  networksetup -removepreferredwirelssnetwork ${2:-"$INTERFACE"} "$1"
+}
+
+status() {
+  res=$(networksetup -getairportpower ${1:-"$INTERFACE"})
+  echo $res
+  if [[ "$res" =~ .*On.* ]]; then
+    current ${1:-"$INTERFACE"}
+  fi
+}
+
+if [ -z "$1" ]; then
+  print_usage
+  print_commands
+  exit 1
+fi
+
+while true; do
+  case "$1" in
+    current )
+      current "$2"
+      break
+      ;;
+    list | --list )
+      list "$2"
+      break
+      ;;
+    network )
+      shift
+      network "$@"
+      break
+      ;;
+    power )
+      shift
+      power "$@"
+      break
+      ;;
+    on )
+      power on "$2"
+      break
+      ;;
+    off )
+      power off "$2"
+      break
+      ;;
+    remove )
+      shift
+      remove "$@"
+      break
+      ;;
+    status )
+      status "$2"
+      break
+      ;;
+    -h | --help )
+      print_usage
+      print_commands
+      # No shifting needed here, we're done
+      exit 0
+      ;;
+    -- ) # End of all options
+      shift
+      break
+      ;;
+    -* )
+      echo "Unknown option: $1"
+      print_usage
+      exit 1
+      ;;
+    * ) # No more options
+      echo "wifi: '$1' is not a recognized command. See 'wifi --help'."
+      exit 1
+      ;;
+  esac
+done

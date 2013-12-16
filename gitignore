@@ -1,0 +1,29 @@
+# OS X
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+# OS X thumbnails
+._*
+
+# OS X files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Ignore tags created by etags and ctags
+TAGS
+tags
+
+# Vim
+.*.sw[a-z]
+*.un~
+Session.vim
+.netrwhist
+
+# Sass
+.sass-cache
+
+# Node
+npm-debug.log
+node_modules

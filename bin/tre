@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# usage: tre [<path>] [<tree options>]
+# Tree with dotfiles, color, ignoring certain files, options, directories
+# first, piped into less with line numbers and preserving color, unless the
+# output is small enough for one screen.
+
+tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -iFNQRX

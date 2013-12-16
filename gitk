@@ -1,0 +1,4 @@
+set mainfont {Monaco 12}
+set textfont {Monaco 12}
+set uifont {"Monaco Bold" 12}
+set tabstop 2

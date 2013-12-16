@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# usage: grep-file <path>
+# Grep whole filename or directories but not the full path from within the
+# current directory.
+
+tree -aifC -I '.git' --dirsfirst | \egrep "/.*$@[^/]"

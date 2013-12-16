@@ -1,0 +1,7 @@
+#command
+h left-scroll
+l right-scroll
+i toggle-option i
+^H back-screen
+#env
+LESS=QX

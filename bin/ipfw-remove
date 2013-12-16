@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# usage: ipfw-remove <port>
+# ipfw (deprecated) remove for the given port.
+
+sudo ipfw delete 7000 allow tcp from any to any dst-port "$1"
