@@ -8,7 +8,7 @@ if [ -n "$file_path" ]; then
   file_path="$(pwd)/${file_path}"
 
   echo "Enter a new file name (without an extension)"
-  read NEW_FILE_NAME
+  read new_file_name
 
   vm_dir="$HOME/VirtualBox VMs"
   saved_vms_dir="$HOME/VirtualBox VMs/saved"
