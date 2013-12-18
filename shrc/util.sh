@@ -2,7 +2,7 @@
 alias bc='bc -l'
 
 # Show current year by default
-alias cal='cal -y'
+alias cal='date && echo && cal -y'
 
 # Compile `.less` from `.lesskey` in dotfiles directory
 alias makelesskey='lesskey -o ~/dotfiles/less ~/dotfiles/lesskey'
