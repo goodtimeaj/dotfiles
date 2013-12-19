@@ -36,5 +36,6 @@
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
+  pager = less
 [include]
   path = .gitconfig.local
