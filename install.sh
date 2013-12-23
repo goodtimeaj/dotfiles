@@ -110,7 +110,7 @@ done
 minify_shell_script_file_in_place build/bash_profile
 
 # Link compiled bash_profile to $HOME
-ln -sfvn "${here}/build/bash_profile" "${HOME}/.bash_profile"
+ln -sfv "${here}/build/bash_profile" "${HOME}/.bash_profile"
 
 echo
 echo "Linking files in bin"
