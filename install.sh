@@ -99,13 +99,8 @@ done
 echo
 echo "Compiling and minifying bash_profile"
 
-# Remove any previous build directory to avoid recursive linking since GNU
-# `ln` doesn't have `-h` option
-rm -rf build
-
 # Compile shrc/* into build/bash_profile
 mkdir build
-touch build/.keep
 touch build/bash_profile
 for file in "$here"/shrc/*; do
   cat "$file" >> build/bash_profile
@@ -115,7 +110,7 @@ done
 minify_shell_script_file_in_place build/bash_profile
 
 # Link compiled bash_profile to $HOME
-ln -sfv "${here}/build/bash_profile" "${HOME}/.bash_profile"
+ln -sfvn "${here}/build/bash_profile" "${HOME}/.bash_profile"
 
 echo
 echo "Linking files in bin"
