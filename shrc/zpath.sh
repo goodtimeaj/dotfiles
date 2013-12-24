@@ -2,7 +2,7 @@
 # order and some paths depend on exports set previously in `../shrc/*`.
 
 # Print `$PATH` on multiple lines
-alias path="echo -e ${PATH//:/\\n}"
+alias path='echo -e ${PATH//:/\\n} | less -iFNQRX'
 
 PATH="/usr/local/sbin:${PATH}"
 PATH="/usr/local/bin:${PATH}"
