@@ -102,6 +102,7 @@ echo "Compiling and minifying bash_profile"
 # Compile shrc/* into build/bash_profile
 mkdir build
 touch build/bash_profile
+cat /dev/null > "${here}/build/bash_profile"
 for file in "$here"/shrc/*; do
   cat "$file" >> build/bash_profile
 done
