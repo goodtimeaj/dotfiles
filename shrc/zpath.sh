@@ -14,4 +14,7 @@ fi
 
 PATH="$HOME/bin:${PATH}"
 
+# Consolidate the PATH
+PATH=$(echo -e ${PATH//:/\\n} | awk '!a[$0]++' \
+       | tr [[:space:]] ':' | sed 's/:*$//')
 export PATH
