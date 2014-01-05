@@ -6,7 +6,7 @@ INTERFACE="en1"
 
 print_usage() {
   cat << EOF
-usage: wifi [--list] <command> [<args>]
+usage: wifi <command> [<args>]
 EOF
 }
 
@@ -15,35 +15,40 @@ print_commands() {
 
 Commands:
   current    [<interface>]               Display the currently connected wifi network
-  list       [<interface>]               List all preferred wireless networks
+  list                                   Lists all the currently available networks
   network    <SSID> [<interface>]        Connect to the given wifi network by SSID
   power      <on | off> [<interface>]    Turn wifi on or off
   on         [<interface>]               Turn wifi on
   off        [<interface>]               Turn wifi off
   remove     <SSID> [<interface>]        Remove the given wifi network by SSID
+  saved      [<interface>]               List all saved (preferred) wireless networks
   status     [<interface>]               Display wifi device status (on/off) and also
                                          the currently connected wifi network
 EOF
 }
 
-power() {
-  networksetup -setairportpower ${2:-"$INTERFACE"} "$1"
+current() {
+  /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I
 }
 
 network() {
   networksetup -setairportnetwork ${2:-"$INTERFACE"} "$1"
 }
 
-current() {
-  networksetup -getairportnetwork ${1:-"$INTERFACE"}
+power() {
+  networksetup -setairportpower ${2:-"$INTERFACE"} "$1"
 }
 
 list() {
-  networksetup -listpreferredwirelessnetworks ${1:-"$INTERFACE"}
+  /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -s
 }
 
 remove() {
   networksetup -removepreferredwirelssnetwork ${2:-"$INTERFACE"} "$1"
+}
+
+saved() {
+  networksetup -listpreferredwirelessnetworks ${1:-"$INTERFACE"}
 }
 
 status() {
@@ -63,11 +68,11 @@ fi
 while true; do
   case "$1" in
     current )
-      current "$2"
+      current
       break
       ;;
-    list | --list )
-      list "$2"
+    list )
+      list
       break
       ;;
     network )
@@ -91,6 +96,10 @@ while true; do
     remove )
       shift
       remove "$@"
+      break
+      ;;
+    saved )
+      saved "$2"
       break
       ;;
     status )
