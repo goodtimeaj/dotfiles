@@ -49,6 +49,7 @@ alias lsl="ls ${long_list_options} | grep '^l'"
 alias opt='c /opt'
 alias p='c ~/p'
 alias rt='c /'
+alias show='ls ${long_list_options} | grep'
 alias sbin='c /sbin "$short_list_options"'
 alias site='c ~/sites'
 alias srv='c /srv'
