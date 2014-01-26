@@ -43,3 +43,6 @@ alias kf='killfinder'
 
 # Lock the screen
 alias lk='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
+
+# Delete all screenshots from the desktop
+alias screenshots='rm ~/Desktop/Screen\ Shot*'
