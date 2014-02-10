@@ -2,8 +2,8 @@ alias h='history'
 alias clearh='cat /dev/null > ~/.bash_history'
 
 # Increase history size
-export HISTSIZE=2000
-export HISTFILESIZE=4000
+export HISTSIZE=3000
+export HISTFILESIZE=6000
 
 # Disable history for `less`
 export LESSHISTFILE=/dev/null
