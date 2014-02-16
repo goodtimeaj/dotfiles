@@ -100,15 +100,17 @@ echo
 echo "Compiling and minifying bash_profile"
 
 # Compile shrc/* into build/bash_profile
-mkdir build
-touch build/bash_profile
+if [ ! -d "${here}/build" ]; then
+  mkdir "${here}/build"
+fi
+touch "${here}/build/bash_profile"
 cat /dev/null > "${here}/build/bash_profile"
 for file in "$here"/shrc/*; do
-  cat "$file" >> build/bash_profile
+  cat "$file" >> "${here}/build/bash_profile"
 done
 
 # Minify compiled bash_profile
-minify_shell_script_file_in_place build/bash_profile
+minify_shell_script_file_in_place "${here}/build/bash_profile"
 
 # Link compiled bash_profile to $HOME
 ln -sfv "${here}/build/bash_profile" "${HOME}/.bash_profile"
