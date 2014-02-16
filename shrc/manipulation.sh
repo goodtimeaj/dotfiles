@@ -7,7 +7,7 @@ alias cp='cp -vi'
 alias cpr='cp -Rvi'
 alias ln='ln -v'
 # Most common options for symbolic links
-alias lns='ln -sfv'
+alias lns='ln -sfvn'
 alias mkd='mkdir -pv'
 # Prompt before overwriting
 alias mv='mv -vi'
