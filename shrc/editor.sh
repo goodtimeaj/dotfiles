@@ -14,7 +14,11 @@ e() {
   if [ $# -eq 0 ]; then
     $EDITOR .
   else
-    $EDITOR "$@"
+    if [ -w "$@" ]; then
+      $EDITOR "$@"
+    else
+      sudo $EDITOR "$@"
+    fi
   fi
 }
 
