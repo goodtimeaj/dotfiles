@@ -73,8 +73,13 @@ function .() {
 
 # Show directory listing for the working executable followed by all paths
 wch() {
-  ls -lah ${ls_color_option} $(which "$@")
-  which -a "$@"
+  local res=$(which "$@")
+  if [ -n "$res" ]; then
+    ls -lah ${ls_color_option} "$res"
+    which -a "$@"
+  else
+    echo "\`$@\` not found"
+  fi
 }
 
 # Make `less` more friendly for non-text input files using `lesspipe`
