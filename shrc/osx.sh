@@ -21,7 +21,6 @@ alias dl='c ~/Downloads'
 alias dt='c ~/Desktop'
 alias lib='c /Library "$short_list_options"'
 alias libh='c ~/Library'
-alias not='c /Volumes/g/notes'
 alias thumb='c /Volumes/Lexar'
 alias vol='c /Volumes'
 

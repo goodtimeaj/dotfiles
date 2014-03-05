@@ -46,6 +46,7 @@ alias lsd="ls ${long_list_options} | grep '^d'"
 alias lsf="ls ${long_list_options} | grep '^-'"
 # List only links
 alias lsl="ls ${long_list_options} | grep '^l'"
+alias not='c ~/notes'
 alias opt='c /opt'
 alias p='c ~/p'
 alias proc='c /proc'
