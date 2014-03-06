@@ -28,6 +28,7 @@ alias cod='c ~/code'
 alias d='c ~/dropbox'
 alias dev='c /dev "$short_list_options"'
 alias dot='c ~/dotfiles'
+alias dotinstall="cd ~/dotfiles && ./install.sh && exec $SHELL -l"
 alias etc='c /etc "$short_list_options"'
 alias lap='c ~/laptop'
 # l and ll are reversed for readability
