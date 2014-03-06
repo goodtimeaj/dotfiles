@@ -103,10 +103,16 @@ echo "Compiling and minifying bash_profile"
 if [ ! -d "${here}/build" ]; then
   mkdir "${here}/build"
 fi
+
 touch "${here}/build/bash_profile"
 cat /dev/null > "${here}/build/bash_profile"
+
 for file in "$here"/shrc/*; do
-  cat "$file" >> "${here}/build/bash_profile"
+  filename="$(basename "$file")"
+
+  if [ "$filename" != "minimal.sh" ]; then
+    cat "$file" >> "${here}/build/bash_profile"
+  fi
 done
 
 # Minify compiled bash_profile
