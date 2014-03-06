@@ -1,3 +1,5 @@
+alias et='exit'
+
 # Make disk space info human readable
 alias df='df -H'
 
