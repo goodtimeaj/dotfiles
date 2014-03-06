@@ -3,4 +3,4 @@ alias et='exit'
 
 # tmux
 alias tm='tmux'
-alias tmi='tmux info | less'
+alias tmi='tmux info | less -iFNQRX'
