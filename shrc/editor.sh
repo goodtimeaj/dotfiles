@@ -9,25 +9,25 @@ export PAGER="/bin/sh -c \"unset PAGER;col -b -x | \
   vim -R -c 'set ft=man nomod' -c 'map q :q!<CR>' \
   -c 'nmap K :Man <C-R>=expand(\\\"<cword>\\\")<CR><CR>' -\""
 
-# `e` with no arguments opens $EDITOR with the current directory
+# `e` with no arguments opens Vim with the current directory
 e() {
   if [ $# -eq 0 ]; then
-    $EDITOR .
+    vim .
   else
     if [ -w "$@" ]; then
-      $EDITOR "$@"
+      vim "$@"
     else
-      sudo $EDITOR "$@"
+      sudo vim "$@"
     fi
   fi
 }
 
-# `v` with no arguments opens $VISUAL with the current directory
+# `v` with no arguments opens MacVim with the current directory
 v() {
   if [ $# -eq 0 ]; then
-    $VISUAL .
+    mvim .
   else
-    $VISUAL "$@"
+    mvim "$@"
   fi
 }
 
