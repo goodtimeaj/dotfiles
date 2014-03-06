@@ -29,16 +29,19 @@ HISTIGNORE="g:gaa:gb:gba:gc:gca:gcaa:gcam:gci:gco:gd:gg:ggg:gl:gp:gst:$HISTIGNOR
 HISTIGNORE="gr:grw:n:ni:no:$HISTIGNORE"
 
 # Navigation
-HISTIGNORE=".:..:...:bin:c:cd:cod:d:dev:dot:etc:h:l:ll:lll:lap:ls:lsd:lsf:lsl:lt:lts:opt:p:rcd:rt:sbin:site:ubin:usbin:usr:var:vimf:$HISTIGNORE"
+HISTIGNORE=".:..:...:bin:c:cd:cod:d:dot:dotinstall:etc:h:l:ll:lll:lap:log:ls:lsd:lsf:lsl:lt:lts:opt:p:rcd:rt:sbin:site:ubin:usbin:usr:var:vimf:$HISTIGNORE"
+
+# OSX
+HISTIGNORE="lk:thumb:screenshots:$HISTIGNORE"
 
 # Ruby
 HISTIGNORE="irb:pry:b:f:migrate:m:rk:s:t:$HISTIGNORE"
 
 # System
-HISTIGNORE="r:$HISTIGNORE"
+HISTIGNORE="et:r:$HISTIGNORE"
 
 # Util
-HISTIGNORE="et:tags:tm:$HISTIGNORE"
+HISTIGNORE="tags:tm:tmi:$HISTIGNORE"
 
 # bin, sbin
 HISTIGNORE="bash:bc:cal:date:df:du:j:pwd:tree:who:whoami:$HISTIGNORE"
