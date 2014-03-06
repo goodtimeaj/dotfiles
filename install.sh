@@ -111,7 +111,11 @@ for file in "$here"/shrc/*; do
   filename="$(basename "$file")"
 
   if [ "$filename" != "minimal.sh" ]; then
-    cat "$file" >> "${here}/build/bash_profile"
+    if [ "$filename" = "osx.sh" ] && [ "$(uname -s)" = "Darwin" ]; then
+      cat "$file" >> "${here}/build/bash_profile"
+    elif [ "$filename" != "osx.sh" ]; then
+      cat "$file" >> "${here}/build/bash_profile"
+    fi
   fi
 done
 
