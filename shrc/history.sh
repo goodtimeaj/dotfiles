@@ -1,5 +1,5 @@
 alias h='history'
-alias clearh='cat /dev/null > ~/.bash_history'
+alias clearh='cat /dev/null > ~/.bash_history && history -c'
 
 # Increase history size
 export HISTSIZE=3000
@@ -23,13 +23,13 @@ export HISTCONTROL=ignoredups:ignorespace
 HISTIGNORE="e:v:sb:$HISTIGNORE"
 
 # Git
-HISTIGNORE="g:gaa:gb:gba:gc:gca:gcaa:gcam:gci:gco:gd:gg:ggg:gl:gp:gst:$HISTIGNORE"
+HISTIGNORE="g:gaa:gb:gba:gc:gca:gcaa:gcam:gci:gco:gd:gg:ggg:git:gl:gp:gst:$HISTIGNORE"
 
 # JS
 HISTIGNORE="gr:grw:n:ni:no:$HISTIGNORE"
 
 # Navigation
-HISTIGNORE=".:..:...:bin:c:cd:cod:d:dot:dotinstall:etc:h:l:ll:lll:lap:log:ls:lsd:lsf:lsl:lt:lts:opt:p:rcd:rt:sbin:site:ubin:usbin:usr:var:vimf:$HISTIGNORE"
+HISTIGNORE=".:..:...:-:bin:c:cd:cod:d:dot:dotinstall:etc:h:l:ll:lll:lap:log:ls:lsd:lsf:lsl:lt:lts:opt:p:rcd:rt:sbin:site:ubin:usbin:usr:var:vimf:$HISTIGNORE"
 
 # OSX
 HISTIGNORE="lk:thumb:screenshots:$HISTIGNORE"
@@ -38,7 +38,7 @@ HISTIGNORE="lk:thumb:screenshots:$HISTIGNORE"
 HISTIGNORE="irb:pry:b:f:migrate:m:rk:s:t:$HISTIGNORE"
 
 # System
-HISTIGNORE="et:r:$HISTIGNORE"
+HISTIGNORE="et:exit:r:$HISTIGNORE"
 
 # Util
 HISTIGNORE="tags:tm:tmi:$HISTIGNORE"
