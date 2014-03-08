@@ -1,10 +1,10 @@
-alias et='exit'
-
 # Make disk space info human readable
 alias df='df -H'
 
 # Make disk usage info human readable
 alias du='du -ch'
+
+alias et='exit'
 
 # Jobs show PID
 alias j='jobs -l'
