@@ -12,15 +12,13 @@ g() {
   fi
 }
 
-
 # History
 ###############################################################################
 
 alias hist='history'
 
-HISTIGNORE="c:e:g:h:l:ll:$HISTIGNORE"
+HISTIGNORE=".:c:e:et:exit:g:git:h:l:ll:$HISTIGNORE"
 export HISTIGNORE
-
 
 # Manipulation
 ###############################################################################
@@ -30,7 +28,6 @@ alias lns='ln -sfvn'
 alias mkd='mkdir -pv'
 alias rmf='rm -rfv'
 alias to='touch'
-
 
 # Navigation
 ###############################################################################
@@ -51,10 +48,10 @@ c() {
   fi
 }
 
-alias ..='cd ..'
 alias dot='c ~/dotfiles'
 alias l="ls -lah ${ls_color_option}"
 alias ll="ls -A ${ls_color_option}"
+alias lt="ls -A ${ls_color_option} | less -iFNQRX"
 alias show='ls -lah ${ls_color_option} | /usr/bin/grep -ni --color=auto'
 alias vimf='c ~/vimfiles'
 
@@ -67,13 +64,33 @@ function .() {
   fi
 }
 
+tre() {
+  tree -aC -I '.git' --dirsfirst "$@" | less -iFNQRX
+}
+
+# Show directory listing for the working executable followed by all paths
+wch() {
+  local res=$(which "$@")
+  if [ -n "$res" ]; then
+    ls -lah ${ls_color_option} "$res"
+    which -a "$@"
+  else
+    echo "\`$@\` not found"
+  fi
+}
+
+# Search
+###############################################################################
+
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
 
 # System
 ###############################################################################
 
 alias et='exit'
 alias reload="exec $SHELL -l"
-
 
 # Path
 ###############################################################################
