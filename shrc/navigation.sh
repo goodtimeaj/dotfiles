@@ -20,7 +20,6 @@ c() {
   fi
 }
 
-alias ..='cd ..'
 alias ...='cd ../..'
 alias -- -='c -'
 alias bin='c /bin'
