@@ -28,12 +28,11 @@ minify_shell_script_file_in_place() {
 
   # Set LANG as C to treat all ASCII characters as themselves and all
   # non-ASCII characters as literals
-  env LANG=C sed 's/	/ /g' "$@" \
-    | env LANG=C sed '/^$/d' \
-    | env LANG=C sed 's/^[ ]*//' \
-    | env LANG=C sed '/^[ ]*#/d' \
-    | env LANG=C sed 's/[ ]*$//' \
-    > tmp
+  env LANG=C sed 's/	/ /g' "$@" |
+    env LANG=C sed '/^$/d' |
+    env LANG=C sed 's/^[ ]*//' |
+    env LANG=C sed '/^[ ]*#/d' |
+    env LANG=C sed 's/[ ]*$//' > tmp
 
   # Copy tmp to the given file and remove tmp
   cp tmp "$@"
