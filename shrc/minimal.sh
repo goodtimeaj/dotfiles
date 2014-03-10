@@ -15,9 +15,9 @@ g() {
 # History
 ###############################################################################
 
-alias hist='history'
+alias h='history'
 
-HISTIGNORE=".:c:e:et:exit:g:git:h:l:ll:$HISTIGNORE"
+HISTIGNORE=".:c:e:et:g:h:l:ll:r:$HISTIGNORE"
 export HISTIGNORE
 
 # Manipulation
@@ -64,6 +64,16 @@ function .() {
   fi
 }
 
+# Greps a long list of the current directory for the given name
+show() {
+  ls -lh |
+  \grep -Eni "[0-9]{2}:[0-9]{2}[ \t].*$@.*$" |
+  \grep -i --color=auto "$@"
+}
+
+# Tree with dotfiles, color, ignoring certain files, options, directories
+# first, piped into less with line numbers and preserving color, unless the
+# output is small enough for one screen
 tre() {
   tree -aC -I '.git' --dirsfirst "$@" | less -iFNQRX
 }
@@ -90,7 +100,7 @@ alias fgrep='fgrep --color=auto'
 ###############################################################################
 
 alias et='exit'
-alias reload="exec $SHELL -l"
+alias r="exec $SHELL -l"
 
 # Path
 ###############################################################################
