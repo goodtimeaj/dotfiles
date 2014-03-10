@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# usage: ipfw-add <port=5000>
+# Usage: ipfw-add <port=5000>
 # ipfw (deprecated) add for the given port.
 
 sudo ipfw add 7000 allow tcp from any to any dst-port "${1:-5000}"

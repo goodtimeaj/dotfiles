@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# usage: data-uri <path>
+# Usage: data-uri <path>
 # Creates a data URI from a file.
 #
 # Thanks:

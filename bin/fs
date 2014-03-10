@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# usage: fs <path>
+# Usage: fs <path>
 # Determine size of a file or total size of a directory.
 #
 # Thanks:

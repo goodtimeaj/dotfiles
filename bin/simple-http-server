@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# usage: server [<port=8000>]
+# Usage: server [<port=8000>]
 # Start an HTTP server from a directory, optionally specifying the port.
 #
 # Thanks:

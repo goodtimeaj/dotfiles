@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# usage: See `print_commands()`
+# Usage: See `print_commands()`
 # Intermediary interface to OS X Wi-Fi functionality.
 
 INTERFACE="en1"

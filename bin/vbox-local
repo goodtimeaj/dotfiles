@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# usage: vbox-local <username> [<port=3022>]
-# SSH into a VirtualBox instance with default host and port
+# Usage: vbox-local <username> [<port=3022>]
+# SSH into a VirtualBox instance with default host and port.
 
 ssh -p "${2:-3022}" "${1}@127.0.0.1"

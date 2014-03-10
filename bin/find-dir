@@ -1,5 +1,5 @@
-#!/usr/bin/env bash
-# usage: find-dir <search>
+#!/bin/sh
+# Usage: find-dir <search>
 # Find directory names only from within the current directory, ignoring
 # searching within selected directories.
 

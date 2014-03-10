@@ -1,8 +1,5 @@
-#!/usr/bin/env bash
-# usage: dsstore
+#!/bin/sh
+# Usage: dsstore
 # Recursively deletes `.DS_Store` files
-#
-# Thanks:
-# @mathiasbynens
 
 find . -type f -name '*.DS_Store' -ls -delete

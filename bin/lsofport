@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# usage: lsofport <port>
+# Usage: lsofport <port>
 # Display processes on the given port.
 
 sudo lsof -i :"$1"

@@ -1,15 +1,13 @@
 #!/usr/bin/env bash
-#
-# Thanks:
-# Adam Sharp
-# Aug 21, 2013
-#
-# usage: Add it to your PATH and `git-submodule-remove path/to/submodule`.
+# Usage: git-submodule-remove <submodule-path>
 #
 # Does the inverse of `git submodule add`:
 #   1) `deinit` the submodule
 #   2) Remove the submodule from the index and working directory
 #   3) Clean up the .gitmodules file
+#
+# Thanks:
+# Adam Sharp
 
 submodule_name=$(echo "$1" | sed 's/\/$//'); shift
 

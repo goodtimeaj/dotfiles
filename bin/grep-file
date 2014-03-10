@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# usage: grep-file <path>
+# Usage: grep-file <search>
 # Grep whole filename or directories but not the full path from within the
 # current directory.
 
