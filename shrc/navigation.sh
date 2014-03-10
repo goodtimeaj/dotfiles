@@ -51,7 +51,6 @@ alias opt='c /opt'
 alias p='c ~/p'
 alias proc='c /proc'
 alias rt='c /'
-alias show='ls ${long_list_options} | grep -ni --color=auto'
 alias sbin='c /sbin "$short_list_options"'
 alias site='c ~/sites'
 alias srv='c /srv'
@@ -72,11 +71,18 @@ function .() {
   fi
 }
 
-# Show directory listing for the working executable followed by all paths
+# Greps a long list of the current directory for the given name
+show() {
+  ls -lh |
+  \grep -Eni "[0-9]{2}:[0-9]{2}[ \t].*$@.*$" |
+  \grep -i --color=auto "$@"
+}
+
+# Shows directory listing for the working executable followed by all paths
 wch() {
   local res=$(which "$@")
   if [ -n "$res" ]; then
-    ls -lah ${ls_color_option} "$res"
+    ls -lh ${ls_color_option} "$res"
     which -a "$@"
   else
     echo "\`$@\` not found"
