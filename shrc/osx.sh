@@ -32,25 +32,6 @@ o() {
   fi
 }
 
-thumb() {
-  declare -a choices=('LEXAR' 'KINGSTON' 'NO NAME')
-  local found=false
-
-  for choice in "${choices[@]}"; do
-    local target_dir="/Volumes/$choice"
-    echo "Search $target_dir"
-
-    if [ -e "$target_dir" ]; then
-      $found=true
-      c "$choice"
-    fi
-  done
-
-  if [ "$found" = false ]; then
-    echo 'Drive not found'
-  fi
-}
-
 # System
 ###############################################################################
 

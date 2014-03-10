@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Usage: thumb
+# Change directory to an attached thumb drive.
+
+declare -a paths=('LEXAR' 'KINGSTON' 'NO NAME')
+found=false
+
+for path in "${paths[@]}"; do
+  local target_dir="/Volumes/$path"
+  echo "Looking for $target_dir"
+
+  if [ -e "$target_dir" ]; then
+    $found=true
+    cd "$path"
+    ls -lahG "$path"
+  fi
+done
+
+if [ "$found" = false ]; then
+  echo 'Drive not found'
+fi
