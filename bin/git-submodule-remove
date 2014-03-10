@@ -8,6 +8,7 @@
 #
 # Thanks:
 # Adam Sharp
+set -e
 
 submodule_name=$(echo "$1" | sed 's/\/$//'); shift
 

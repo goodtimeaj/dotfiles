@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Usage: vbox-clone <vdi-path>
 # Clone the VirtualBox image in the given path to a default save location.
+set -e
 
 file_path=`find "$1" -name *.vdi`
 
