@@ -71,13 +71,6 @@ function .() {
   fi
 }
 
-# Greps a long list of the current directory for the given name
-show() {
-  ls -lh |
-  \grep -Eni "[0-9]{2}:[0-9]{2}[ \t].*$@.*$" |
-  \grep -i --color=auto "$@"
-}
-
 # Shows directory listing for the working executable followed by all paths
 wch() {
   local res=$(which "$@")
