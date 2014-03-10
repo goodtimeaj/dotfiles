@@ -17,7 +17,7 @@ alias rmf='rm -rfv'
 alias to='touch'
 
 # Copy the current directory into the given directory
-ccd() {
+cpcd() {
   local current_dir="$(pwd)"
   local target_dir=$(cd $(dirname "$1"); pwd)/$(basename "$1")
   cd .. && cp -Rvi "$current_dir" "$target_dir"
@@ -40,7 +40,7 @@ mvcd() {
 }
 
 # Remove the current directory and traverse to the enclosing directory
-rcd() {
+rmcd() {
   local current_dir="$(pwd)"
   cd .. && rm -rfv "$current_dir"
   echo
