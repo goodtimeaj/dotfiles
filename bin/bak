@@ -1,0 +1,11 @@
+#!/bin/sh
+# Usage: bak <path> ...
+# Copies the given file(s) to file.bak
+
+if [ $# = 0 ]; then
+  echo "usage: bak <path> ..."
+else
+  for file in "$@"; do
+    cp -ipRv "$file" "${file}.bak"
+  done
+fi

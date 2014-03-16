@@ -1,0 +1,11 @@
+#!/bin/sh
+# Usage: orig <path> ...
+# Copies the given file(s) to file.orig
+
+if [ $# = 0 ]; then
+  echo "usage: orig <path> ..."
+else
+  for file in "$@"; do
+    cp -ipRv "$file" "${file}.orig"
+  done
+fi
