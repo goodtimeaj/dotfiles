@@ -2,17 +2,17 @@
 # Usage: thumb
 # Change directory to an attached thumb drive.
 
-declare -a paths=('LEXAR' 'KINGSTON' 'NO NAME')
+declare -a paths=('Lexar' 'KINGSTON' 'NO NAME')
 found=false
 
 for path in "${paths[@]}"; do
   target_dir="/Volumes/$path"
   echo "Looking for $target_dir"
 
-  if [ -e "$target_dir" ]; then
+  if [ -d "$target_dir" ]; then
     $found=true
-    cd "$path"
-    ls -lahG "$path"
+    cd "$target_dir"
+    ls -lahG
   fi
 done
 
