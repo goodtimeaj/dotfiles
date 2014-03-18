@@ -1,5 +1,5 @@
 ---
-# gem env help
+# gem help env
 # https://github.com/rubygems/rubygems/blob/master/lib/rubygems/config_file.rb
 install: --no-document
 update: --no-document
