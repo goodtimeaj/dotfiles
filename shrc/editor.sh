@@ -1,5 +1,5 @@
 export EDITOR=vim
-export VISUAL=mvim
+export VISUAL=vim
 export GIT_EDITOR=$EDITOR
 export GEM_EDITOR=$EDITOR
 export LESSEDIT=$EDITOR
