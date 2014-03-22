@@ -15,9 +15,16 @@ e() {
     vim .
   else
     if [ -w "$@" ]; then
+      # File exists and is writable
       vim "$@"
     else
-      sudo vim "$@"
+      if [ -e "$@" ]; then
+        # File exists and is read-only
+        sudo vim "$@"
+      else
+        # File does not exist yet
+        vim "$@"
+      fi
     fi
   fi
 }
