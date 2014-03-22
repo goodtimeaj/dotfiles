@@ -22,15 +22,6 @@ e() {
   fi
 }
 
-# `v` with no arguments opens MacVim with the current directory
-v() {
-  if [ $# -eq 0 ]; then
-    mvim .
-  else
-    mvim "$@"
-  fi
-}
-
 # `sb` with no arguments opens Sublime Text with the current directory
 sb() {
   if [ $# -eq 0 ]; then
