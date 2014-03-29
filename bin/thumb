@@ -2,6 +2,8 @@
 # Usage: thumb
 # Change directory to an attached thumb drive.
 
+[ "$(uname -s)" != "Darwin" ] && exit 1
+
 declare -a paths=('Lexar' 'KINGSTON' 'NO NAME')
 found=false
 

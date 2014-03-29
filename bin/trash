@@ -2,5 +2,7 @@
 # Usage: trash
 # Empty the Trash on all mounted volumes and the main HDD
 
+[ "$(uname -s)" != "Darwin" ] && exit 1
+
 sudo rm -rfv /Volumes/*/.Trashes
 rm -rfv ~/.Trash
