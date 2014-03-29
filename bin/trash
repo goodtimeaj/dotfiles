@@ -1,8 +1,35 @@
 #!/bin/sh
-# Usage: trash
-# Empty the Trash on all mounted volumes and the main HDD
+# Usage: trash [-a|--asl] [-m|mounted] 
+# Empty the OS X Trashes
+set -e
 
 [ "$(uname -s)" != "Darwin" ] && exit 1
 
-sudo rm -rfv /Volumes/*/.Trashes
-rm -rfv ~/.Trash
+while true; do
+  case "$1" in
+    -a|--asl )
+      # Clear Apple's System Logs to improve shell startup speed
+      sudo rm -rfv /private/var/log/asl/*.asl
+      shift
+      ;;
+    -m|--mounted )
+      # Empty Trash on all mounted volumes
+      sudo rm -rfv /Volumes/*/.Trashes
+      shift
+      ;;
+    -- ) # End of all options
+      shift
+      break
+      ;;
+    -* )
+      echo "Unknown option: $1"
+      exit 1
+      ;;
+    * ) # No more options
+      break
+      ;;
+  esac
+done
+
+# Always empty Trash in $HOME
+rm -rfv "${HOME}/.Trash"
