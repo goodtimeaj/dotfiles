@@ -66,7 +66,7 @@ function .() {
 
 # Greps a long list of the current directory for the given name
 show() {
-  ls -lh |
+  ls -lah |
   \grep -Eni "[0-9]{2}:[0-9]{2}[ \t].*$@.*$" |
   \grep -i --color=auto "$@"
 }
