@@ -36,16 +36,20 @@ alias ll="ls ${short_list_options}"
 # Finger slippage
 alias lll='ll'
 alias log='c /var/log'
-# Display a long format list in less
-alias lt="ls ${long_list_options} | less -iFNQRX"
-# Display a short format list in less
-alias lts="ls ${short_list_options} | less -iFNQRX"
+# Long list in less
+alias lt="ls -p ${long_list_options} | less -iFNQRX"
+# Short list in less
+alias lts="ls -pC ${short_list_options} | less -iFQRX"
 # List only directories
-alias lsd="ls ${long_list_options} | grep '^d'"
+alias lsd="ls ${long_list_options} | \grep --color=never '^d'"
 # List only files
-alias lsf="ls ${long_list_options} | grep '^-'"
+alias lsf="ls ${long_list_options} | \grep --color=never '^-'"
 # List only links
-alias lsl="ls ${long_list_options} | grep '^l'"
+alias lsl="ls ${long_list_options} | \grep --color=never '^l'"
+# List reverse by time
+alias lst="ls -lAhtr ${ls_color_option}"
+# List reverse by size
+alias lss="ls -lAhSr ${ls_color_option}"
 alias not='c ~/notes'
 alias opt='c /opt'
 alias p='c ~/p'
