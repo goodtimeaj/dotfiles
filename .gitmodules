@@ -1,0 +1,4 @@
+[submodule "bin-labs"]
+	path = bin-labs
+	url = git@github.com:gregstallings/bin-labs.git
+	branch = master
