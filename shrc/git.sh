@@ -44,6 +44,10 @@ g() {
 gco() {
   if [ $# -eq 0 ]; then
     git checkout master
+
+    if [ $? -eq 1 ]; then 
+      git checkout mainline
+    fi
   else
     git checkout "$@"
   fi
