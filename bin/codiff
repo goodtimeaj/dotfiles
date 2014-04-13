@@ -1,0 +1,5 @@
+#!/bin/sh
+# Usage: codiff [<options>] <file1> <file2>
+# Diffs side-by-side with color, piped into less
+
+diff -y "$@" | colordiff | less -iFNQRX
