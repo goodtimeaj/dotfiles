@@ -43,6 +43,4 @@ mvcd() {
 rmcd() {
   local current_dir="$(pwd)"
   cd .. && rm -rfv "$current_dir"
-  echo
-  c .
 }
