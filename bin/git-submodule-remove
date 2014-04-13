@@ -1,32 +1,37 @@
 #!/usr/bin/env bash
 # Usage: git-submodule-remove <submodule-path>
-#
-# Does the inverse of `git submodule add`:
-#   1) `deinit` the submodule
-#   2) Remove the submodule from the index and working directory
-#   3) Clean up the .gitmodules file
-#
-# Thanks:
-# Adam Sharp
 set -e
 
-submodule_name=$(echo "$1" | sed 's/\/$//'); shift
-
-exit_err() {
+# Exits with the given error message
+die() {
   [ $# -gt 0 ] && echo "fatal: $*" 1>&2
   exit 1
 }
 
-if git submodule status "$submodule_name" >/dev/null 2>&1; then
-  git submodule deinit -f "$submodule_name"
-  git rm -f "$submodule_name"
+[ -z "$1" ] && exit 1
 
-  git config -f .gitmodules --remove-section "submodule.$submodule_name"
+# Remove any ending slash from the submodule path
+submodule_path=$(echo "$1" | sed 's/\/$//'); shift
+
+if git submodule status "$submodule_path" >/dev/null 2>&1; then
+
+  # Remove the submodule's directory contents and remove the submodule's
+  # section from `.git/config`
+  git submodule deinit -f "$submodule_path"
+
+  # Remove the (now empty) submodule directory and remove the submodule's
+  # section from `.gitmodules`
+  git rm -f "$submodule_path"
+
+  # If the above leaves `.gitmodules` empty then remove it
   if [ -z "$(cat .gitmodules)" ]; then
     git rm -f .gitmodules
-  else
-    git add .gitmodules
+  fi
+
+  # Remove the submodule's directory from `.git/modules/`
+  if [ -d ".git/modules/$submodule_path" ]; then
+    rm -rf ".git/modules/$submodule_path"
   fi
 else
-  exit_err "Submodule '$submodule_name' not found"
+  die "Submodule '$submodule_path' not found"
 fi
