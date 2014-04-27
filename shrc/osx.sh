@@ -21,6 +21,7 @@ alias dl='c ~/Downloads'
 alias dt='c ~/Desktop'
 alias lib='c /Library "$short_list_options"'
 alias libh='c ~/Library'
+alias thumb='c "$("$HOME/bin/thumb" "$PWD")"'
 alias vol='c /Volumes'
 
 # `o` with no arguments opens current directory

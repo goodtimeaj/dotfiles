@@ -29,7 +29,7 @@ HISTIGNORE="g:gaa:gb:gba:gc:gca:gcaa:gcam:gci:gco:gd:gg:ggg:git:gl:gp:gst:$HISTI
 HISTIGNORE="gr:grw:n:ni:no:$HISTIGNORE"
 
 # Navigation
-HISTIGNORE=".:..:...:-:bin:c:cd:cod:d:dot:dotinstall:etc:h:l:ll:lll:lap:log:ls:lsd:lsf:lsl:lt:lts:opt:p:rcd:rt:sbin:site:ubin:usbin:usr:var:vimf:$HISTIGNORE"
+HISTIGNORE=".:..:...:-:bin:c:cd:cod:d:dot:etc:h:l:ll:lll:lap:log:ls:lsd:lsf:lsl:lt:lts:opt:p:rcd:rt:sbin:site:ubin:usbin:usr:var:vimf:$HISTIGNORE"
 
 # OSX
 HISTIGNORE="lk:thumb:screenshots:$HISTIGNORE"
@@ -38,7 +38,7 @@ HISTIGNORE="lk:thumb:screenshots:$HISTIGNORE"
 HISTIGNORE="irb:pry:b:f:migrate:m:rk:s:t:$HISTIGNORE"
 
 # System
-HISTIGNORE="et:exit:r:$HISTIGNORE"
+HISTIGNORE="et:exit:path:r:$HISTIGNORE"
 
 # Util
 HISTIGNORE="tags:tm:tmi:$HISTIGNORE"
