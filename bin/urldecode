@@ -1,0 +1,5 @@
+#!/bin/sh
+# Usage: urldecode <encoded-url>
+# Decodes an encoded url.
+
+python -c "import sys, urllib as ul; print ul.unquote_plus(sys.argv[1])"
