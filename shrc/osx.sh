@@ -22,6 +22,7 @@ alias dt='c ~/Desktop'
 alias lib='c /Library "$short_list_options"'
 alias libh='c ~/Library'
 alias thumb='c "$("$HOME/bin/thumb" "$PWD")"'
+alias updatedb='sudo /usr/libexec/locate.updatedb'
 alias vol='c /Volumes'
 
 # `o` with no arguments opens current directory
