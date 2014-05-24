@@ -1,0 +1,10 @@
+#!/bin/sh
+# Usage: chmoderize [<file-mode=644>] [<directory-mode=700>]
+# Recursively changes file permissions on all files and directories within the
+# the current directory.
+
+# Files
+find . ! -path . ! -type d -exec sudo chmod "${1-644}" {} \;
+
+# Directories
+find . ! -path . -type d -exec sudo chmod "${2:-700}" {} \;

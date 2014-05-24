@@ -1,0 +1,5 @@
+#!/bin/sh
+# Usage: chownerize <owner> <group>
+# Recursively changes ownership on all files within the current directory.
+
+find . ! -path . -exec sudo chown "$1":"$2" {} \;
