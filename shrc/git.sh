@@ -60,7 +60,7 @@ gco() {
 
 alias gcop='gco --patch'
 alias gd='git diff --find-renames'
-alias gdc='git diff --cached --find-renames'
+alias gdi='git diff --cached --find-renames'
 alias gf='git fetch'
 # Verbose `git status` since `g` is --short
 alias gg='git status'
