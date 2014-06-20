@@ -3,4 +3,4 @@
 # Find filenames only from within the current directory, ignoring searching
 # within selected directories.
 
-find . -name "*$@*" ! -type d | \grep -v '/.git'
+find . -iname "*$@*" ! -type d | \grep -v '/.git'
