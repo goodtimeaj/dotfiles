@@ -30,6 +30,6 @@
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
-  pager = less
+  pager = less -iFQX
 [include]
   path = .gitconfig.local
