@@ -75,7 +75,8 @@ show() {
 # first, piped into less with line numbers and preserving color, unless the
 # output is small enough for one screen
 tre() {
-  tree -aC -I '.git' --dirsfirst "$@" | less -iFNQRX
+  tree -aC -I '.git|node_modules|bower_components|.sass-cache' --dirsfirst "$@" |
+  less -iFNQRX
 }
 
 # Show directory listing for the working executable followed by all paths

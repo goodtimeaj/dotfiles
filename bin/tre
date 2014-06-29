@@ -4,5 +4,5 @@
 # first, piped into less with line numbers and preserving color, unless the
 # output is small enough for one screen.
 
-tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" |
+tree -aC -I '.git|node_modules|bower_components|.sass-cache' --dirsfirst "$@" |
 less -iFNQRX
