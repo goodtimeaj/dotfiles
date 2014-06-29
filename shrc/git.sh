@@ -86,10 +86,11 @@ gls() {
   glog --pickaxe-regex "-S$query" "$@"
 }
 
-# Force ff-only - combined with no-ff for merge in gitconfig
+alias gm='git merge --no-ff'
 alias gmf='git merge --ff-only'
 alias gp='git push'
 alias gpthis='gp origin $(git_current_branch)'
+alias grv='git remote -v'
 alias gs='git show'
 alias gst='git stash'
 alias gstl='git stash list'

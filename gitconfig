@@ -11,7 +11,6 @@
   delete-branch = !sh -c 'git push origin :refs/heads/$1 && git remote prune origin && git branch -D $1' -
   delete-last-commit = reset --hard HEAD~1
   diff-last-commit = diff HEAD^ HEAD
-  in = init
   merge-branch = !git checkout master && git merge @{-1}
   pr = !hub pull-request
   isave = !sh -c 'git add --all :/ && git commit -m ''Minor\\ changes'' && git push' -
