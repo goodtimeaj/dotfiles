@@ -74,7 +74,7 @@ git-new() {
   touch .gitignore
 }
 
-alias glog='git log --date-order --pretty="format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset"'
+alias glog='git log --date-order --pretty="format:%C(yellow)%h%Cred%d %<(50)%Creset%s %>(13)%Cgreen%ar %Cblue%an%Creset"'
 alias gl='glog --graph'
 alias gla='gl --all'
 alias glo='git log --oneline'
