@@ -66,6 +66,9 @@ alias gf='git fetch'
 alias gg='git status'
 alias gin='git init'
 
+alias git-jump='c "$(find-git-working-dir)"'
+alias gj='git-jump'
+
 # Creates a new git repo given a new directory name
 git-new() {
   [ ! -d "$1" ] && mkdir "$1" &&
