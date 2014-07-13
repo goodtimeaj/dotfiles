@@ -6,7 +6,7 @@ git_working_dir="$(git rev-parse --show-toplevel)"
 
 if [ -z "$git_working_dir" ]; then
   # Not inside a git working dir so find the first git dir down the dir tree
-  first_git_dir="$(find $(pwd) -name ".git" | sed -n 2p)"
+  first_git_dir="$(find $(pwd) -name ".git")"
   git_working_dir="$(dirname "$first_git_dir")"
 fi
 
