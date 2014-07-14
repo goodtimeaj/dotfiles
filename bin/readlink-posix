@@ -1,0 +1,11 @@
+# #!/bin/sh
+# Usage: readlink-posix <target_file>
+# POSIX-compatible version of `readlink`. Returns the source file given a
+# target file of a symlink.
+
+target_file="$1"
+if [ -h "$target_file" ]; then
+  ls_res="$(LC_TIME=C ls -ld "$target_file")"
+  source_file=${ls_res#*"${target_file} -> "}
+  echo "$source_file"
+fi
