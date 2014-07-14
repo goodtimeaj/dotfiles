@@ -52,7 +52,6 @@ alias dot='c ~/dotfiles'
 alias l="ls -lah ${ls_color_option}"
 alias ll="ls -A ${ls_color_option}"
 alias lt="ls -A ${ls_color_option} | less -iFNQRX"
-alias show='ls -lah ${ls_color_option} | /usr/bin/grep -ni --color=auto'
 alias vimf='c ~/vimfiles'
 
 # `.` with no arguments traverses up directory
