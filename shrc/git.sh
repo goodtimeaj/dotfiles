@@ -66,7 +66,7 @@ alias gf='git fetch'
 alias gg='git status'
 alias gin='git init'
 
-alias git-jump='c "$(find-git-working-dir)"'
+alias git-jump='c "$(find-git-working-dir 3)"'
 alias gj='git-jump'
 
 # Creates a new git repo given a new directory name

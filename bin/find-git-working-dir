@@ -1,13 +1,28 @@
 #!/usr/bin/env bash
+# Usage: find-git-working-dir [<max-depth>]
 # Echos the enclosing git working directory or echos the first git working
 # directory found down the directory tree.
 
+max_depth="$1"
+
 git_working_dir="$(git rev-parse --show-toplevel)"
 
-if [ -z "$git_working_dir" ]; then
+if [ -n "$git_working_dir" ]; then
+  echo "$git_working_dir"
+else
   # Not inside a git working dir so find the first git dir down the dir tree
-  first_git_dir="$(find $(pwd) -name ".git")"
-  git_working_dir="$(dirname "$first_git_dir")"
-fi
 
-echo "$git_working_dir"
+  if [ -n "$max_depth" ]; then
+    first_git_dir="$(find $(pwd) -name ".git" -maxdepth "$max_depth")"
+  else
+    first_git_dir="$(find $(pwd) -name ".git")"
+  fi
+
+  if [ -n "$first_git_dir" ]; then
+    git_working_dir="$(dirname "$first_git_dir")"
+    echo "$git_working_dir"
+  else
+    echo "Could not find a git working dir"
+    exit 1
+  fi
+fi
