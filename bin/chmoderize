@@ -4,7 +4,7 @@
 # the current directory.
 
 # Files
-find . ! -path . ! -type d -exec sudo chmod "${1-644}" {} \;
+find . ! -path . ! -type d -exec sudo chmod "${1:-644}" {} \;
 
 # Directories
 find . ! -path . -type d -exec sudo chmod "${2:-700}" {} \;
