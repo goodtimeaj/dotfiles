@@ -1,0 +1,5 @@
+#!/bin/sh
+# Usage: dexattrize
+# Recursively removes extended attributes within the current directory.
+
+find . ! -path . -exec xattr -c {} \;
