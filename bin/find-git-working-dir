@@ -13,7 +13,7 @@ else
   # Not inside a git working dir so find the first git dir down the dir tree
 
   if [ -n "$max_depth" ]; then
-    first_git_dir="$(find $(pwd) -name ".git" -maxdepth "$max_depth" | head -n 1)"
+    first_git_dir="$(find $(pwd) -maxdepth "$max_depth" -name ".git" | head -n 1)"
   else
     first_git_dir="$(find $(pwd) -name ".git" | head -n 1)"
   fi
