@@ -14,6 +14,7 @@ alias mk='mkd'
 alias mv='mv -vi'
 alias rm='rm -v'
 alias rmf='rm -rfv'
+alias rmx='xattr -c'
 alias to='touch'
 
 # Copy the current directory into the given directory
