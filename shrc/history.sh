@@ -23,13 +23,16 @@ export HISTCONTROL=ignoredups:ignorespace
 HISTIGNORE="e:v:sb:$HISTIGNORE"
 
 # Git
-HISTIGNORE="g:gaa:gb:gba:gc:gca:gcaa:gcam:gci:gco:gd:gg:ggg:git:gl:gp:gst:$HISTIGNORE"
+HISTIGNORE="g:gaa:gb:gba:gc:gca:gcaa:gcam:gci:gco:gd:gdi:gg:ggg:git:gl:gp:gst:$HISTIGNORE"
 
 # JS
 HISTIGNORE="gr:grw:n:ni:no:$HISTIGNORE"
 
+# Manipulation
+HISTIGNORE="rmcd:$HISTIGNORE"
+
 # Navigation
-HISTIGNORE=".:..:...:-:bin:c:cd:cod:d:dot:etc:h:l:ll:lll:lap:log:ls:lsd:lsf:lsl:lt:lts:opt:p:rcd:rt:sbin:site:ubin:usbin:usr:var:vimf:$HISTIGNORE"
+HISTIGNORE=".:..:...:-:bin:c:cd:cod:d:dot:etc:h:l:ll:lll:lap:log:ls:lsd:lsf:lsl:lst:lss:lt:lts:opt:p:rcd:rt:sbin:site:ubin:usbin:usr:var:vimf:$HISTIGNORE"
 
 # OSX
 HISTIGNORE="lk:thumb:screenshots:$HISTIGNORE"
