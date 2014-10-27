@@ -48,6 +48,7 @@ c() {
   fi
 }
 
+alias ca='less -iFNQRX'
 alias dot='c ~/dotfiles'
 alias l="ls -lah ${ls_color_option}"
 alias ll="ls -A ${ls_color_option}"

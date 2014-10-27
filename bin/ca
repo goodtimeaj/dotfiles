@@ -1,5 +1,0 @@
-#!/bin/sh
-# Usage: ca <path>
-# `cat` into `less`.
-
-cat "$@" | less -iFNQRX
