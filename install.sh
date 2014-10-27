@@ -139,7 +139,9 @@ for file in "${here}/bin"/*; do
 done
 
 # Link files in bin-labs to $HOME/bin
-for file in "${here}/bin-labs"/*; do
-  filename="$(basename "$file")"
-  ln -sfv "${here}/bin-labs/${filename}" "${HOME}/bin/${filename}"
-done
+if [ -d "${here}/bin-labs" ]; then
+  for file in "${here}/bin-labs"/*; do
+    filename="$(basename "$file")"
+    ln -sfv "${here}/bin-labs/${filename}" "${HOME}/bin/${filename}"
+  done
+fi
