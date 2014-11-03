@@ -1,5 +1,7 @@
 alias tma='tmux attach'
 alias tmi='tmux info | less -iFNQRX'
+# Set the current tmux window name to the cwd basename
+alias tmw='tmux rename-window "$(basename "$(pwd)")"'
 
 tmux_has_session() {
   tmux has-session -t "$1" 2>/dev/null
