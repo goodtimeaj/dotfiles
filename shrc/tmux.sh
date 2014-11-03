@@ -1,3 +1,4 @@
+alias tma='tmux attach'
 alias tmi='tmux info | less -iFNQRX'
 
 # Start a new tmux session with the cwd basename, `tmux` otherwise
