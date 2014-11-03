@@ -1,34 +1,35 @@
+# vim:ft=gitconfig:
 [push]
-  default = current
+	default = current
 [color]
-  ui = auto
-  diff = auto
-  status = auto
-  branch = auto
+	ui = auto
+	diff = auto
+	status = auto
+	branch = auto
 [alias]
-  cl = clone
-  create-branch = !sh -c 'git push origin HEAD:refs/heads/$1 && git fetch origin && git branch --track $1 origin/$1 && cd . && git checkout $1' -
-  delete-branch = !sh -c 'git push origin :refs/heads/$1 && git remote prune origin && git branch -D $1' -
-  delete-last-commit = reset --hard HEAD~1
-  diff-last-commit = diff HEAD^ HEAD
-  merge-branch = !git checkout master && git merge @{-1}
-  pr = !hub pull-request
-  isave = !sh -c 'git add --all :/ && git commit -m ''Minor\\ changes'' && git push' -
-  msave = !sh -c 'git add --all :/ && git commit -m ''Moar'' && git push' -
-  tsave = !sh -c 'git add --all :/ && git commit -m ''Fix\\ typo'' && git push' -
-  ls = config --list
-  ref = reflog
-  rem = remote
-  remove-sensitive-file = !sh -c 'git filter-branch --force --index-filter ''git rm --cached --ignore-unmatch $1'' --prune-empty --tag-name-filter cat -- --all' -
-  sub = submodule
-  subba = submodule add
-  sub-update = submodule foreach git pull
-  sub-update-origin = submodule foreach git pull origin master
-  undo-last-commit = reset --soft HEAD~1
-  up = !git fetch origin && git rebase origin/master
+	cl = clone
+	create-branch = !sh -c 'git push origin HEAD:refs/heads/$1 && git fetch origin && git branch --track $1 origin/$1 && cd . && git checkout $1' -
+	delete-branch = !sh -c 'git push origin :refs/heads/$1 && git remote prune origin && git branch -D $1' -
+	delete-last-commit = reset --hard HEAD~1
+	diff-last-commit = diff HEAD^ HEAD
+	merge-branch = !git checkout master && git merge @{-1}
+	pr = !hub pull-request
+	isave = !sh -c 'git add --all :/ && git commit -m ''Minor\\ changes'' && git push' -
+	msave = !sh -c 'git add --all :/ && git commit -m ''Moar'' && git push' -
+	tsave = !sh -c 'git add --all :/ && git commit -m ''Fix\\ typo'' && git push' -
+	ls = config --list
+	ref = reflog
+	rem = remote
+	remove-sensitive-file = !sh -c 'git filter-branch --force --index-filter ''git rm --cached --ignore-unmatch $1'' --prune-empty --tag-name-filter cat -- --all' -
+	sub = submodule
+	subba = submodule add
+	sub-update = submodule foreach git pull
+	sub-update-origin = submodule foreach git pull origin master
+	undo-last-commit = reset --soft HEAD~1
+	up = !git fetch origin && git rebase origin/master
 [core]
-  excludesfile = ~/.gitignore
-  autocrlf = input
-  pager = less -iFQX
+	excludesfile = ~/.gitignore
+	autocrlf = input
+	pager = less -iFQX
 [include]
-  path = .gitconfig.local
+	path = .gitconfig.local
