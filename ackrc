@@ -6,6 +6,9 @@
 # --color-lineno=bold red
 # --color-match=bold magenta
 
+# Show this number of context lines above and below the match
+--context=2
+
 # Sort filenames lexically so multiple ack runs produce the same output
 --sort-files
 
