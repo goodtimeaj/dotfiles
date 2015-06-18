@@ -73,8 +73,7 @@ alias gj='git-jump'
 git-new() {
   [ ! -d "$1" ] && mkdir "$1" &&
   cd "$1" &&
-  git init &&
-  touch .gitignore
+  git init
 }
 
 alias glog='git log --date-order --pretty="format:%C(yellow)%h%Cred%d %<(50)%Creset%s %>(13)%Cgreen%ar %Cblue%an%Creset"'
