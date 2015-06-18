@@ -35,7 +35,7 @@ HISTIGNORE="rmcd:$HISTIGNORE"
 HISTIGNORE=".:..:...:-:bin:c:cd:cod:d:dot:etc:h:l:ll:lll:lap:log:ls:lsd:lsf:lsl:lst:lss:lt:lts:opt:p:rcd:rt:sbin:site:ubin:usbin:usr:var:vimf:$HISTIGNORE"
 
 # OSX
-HISTIGNORE="lk:thumb:screenshots:$HISTIGNORE"
+HISTIGNORE="lk:thumb:$HISTIGNORE"
 
 # Ruby
 HISTIGNORE="irb:pry:b:f:migrate:m:rk:s:t:$HISTIGNORE"
