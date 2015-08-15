@@ -1,4 +1,5 @@
 alias tma='tmux attach'
+alias tmat='tmux attach -t'
 alias tmi='tmux info | less -iFNQRX'
 # Set the current tmux window name to the cwd basename
 alias tmw='tmux rename-window "$(basename "$(pwd)")"'
