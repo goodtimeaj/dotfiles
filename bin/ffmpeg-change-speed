@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# Usage: ffmpeg-change-speed
+# Increases or decreases the speed of all mpegs in the current directory by
+# the speed multiple. New and existing files are moved to subdirectories after
+# processing.
+#
+# Prerequisites:
+# `ffmpeg`
+
+print_status() {
+  cat << EOF
+
+===============================================================================
+Processing $1...
+===============================================================================
+
+EOF
+}
+
+cwd="$(pwd)"
+
+mkdir "${cwd}/ffmpeg-processed"
+mkdir "${cwd}/ffmpeg-new"
+
+for file in "${cwd}"/*.mp4; do
+  filename="$(basename "$file")"
+  print_status "$filename"
+  filename="${filename%.*}"
+
+  ffmpeg -i "./${filename}.mp4" -filter_complex "[0:v]setpts=0.6666*PTS[v];[0:a]atempo=1.5[a]" -map "[v]" -map "[a]" "./ffmpeg-new/${filename}.mp4" &&
+    mv -v "${filename}.mp4" "./ffmpeg-processed/${filename}.mp4"
+done
