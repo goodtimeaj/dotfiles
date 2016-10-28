@@ -145,3 +145,5 @@ if [ -d "${here}/bin-labs" ]; then
     ln -sfv "${here}/bin-labs/${filename}" "${HOME}/bin/${filename}"
   done
 fi
+
+exec /bin/bash -l
