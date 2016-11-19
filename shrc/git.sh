@@ -35,6 +35,7 @@ alias gap='git add --patch'
 alias gau='git add --update'
 alias gb='git branch -v'
 alias gba='git branch -vv --all'
+alias gbd='git branch -D'
 alias gc='git commit -v'
 # Commit all changed files
 alias gca='git commit -v --all'
