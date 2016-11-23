@@ -92,6 +92,8 @@ gls() {
 alias gm='git merge --no-ff'
 alias gmf='git merge --ff-only'
 alias gp='git push'
+alias gpl='git pull --ff-only'
+alias gpr='git pull --rebase'
 alias gpthis='gp origin $(git_current_branch)'
 alias grm='git rebase master'
 alias grv='git remote -v'
