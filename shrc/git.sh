@@ -59,6 +59,7 @@ gco() {
   fi
 }
 
+alias gcoa='gco -- .'
 alias gcop='gco --patch'
 alias gd='git diff --find-renames'
 alias gdi='git diff --cached --find-renames'
