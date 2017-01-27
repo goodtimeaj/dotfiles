@@ -7,3 +7,5 @@ COMMON_GREP_OPTIONS='-ni --color=auto'
 alias grep="grep ${COMMON_GREP_OPTIONS}"
 alias egrep="egrep ${COMMON_GREP_OPTIONS}"
 alias fgrep="fgrep ${COMMON_GREP_OPTIONS}"
+
+alias ff='find-file'
