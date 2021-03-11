@@ -23,23 +23,17 @@ c() {
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
-alias ....='cd ../../../..'
-alias .....='cd ../../../../..'
 alias -- -='c -'
-alias bin='c /bin'
 alias a='less -iFNQRX'
-alias cod='c ~/code'
 alias d='c ~/dropbox'
 alias dot='c ~/dotfiles'
 alias dotinstall="cd ~/dotfiles && ./install.sh && exec $SHELL -l"
-alias etc='c /etc "$short_list_options"'
 alias lap='c ~/laptop'
 # l and ll are reversed for readability
 alias l="ls ${long_list_options}"
 alias ll="ls ${short_list_options}"
 # Finger slippage
 alias lll='ll'
-alias log='c /var/log'
 # List only directories
 alias lsd="ls ${long_list_options} | \grep --color=never '^d'"
 # List only files
@@ -55,18 +49,10 @@ alias lt="ls -p ${long_list_options} | less -iFNQRX"
 # Short list in less
 alias lts="ls -pC ${short_list_options} | less -iFQRX"
 alias not='c ~/notes'
-alias opt='c /opt'
 alias p='c ~/p'
-alias rt='c /'
-alias rtmp='c /tmp'
 alias sbin='c /sbin "$short_list_options"'
-alias site='c ~/sites'
 alias tlf='tail -f'
 alias tmp='c ~/tmp'
-alias usr='c /usr'
-alias ubin='c /usr/bin "$short_list_options"'
-alias usbin='c /usr/sbin "$short_list_options"'
-alias var='c /var'
 alias vimf='c ~/vimfiles'
 
 # `.` with no arguments traverses up directory
