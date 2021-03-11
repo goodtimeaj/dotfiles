@@ -1,8 +1,3 @@
-#
-# Thanks:
-# @thoughtbot
-#
-
 # `rbenv` root
 export RBENV_ROOT="${HOME}/.rbenv"
 

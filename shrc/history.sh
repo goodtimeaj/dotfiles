@@ -23,10 +23,10 @@ export HISTCONTROL=ignoredups:ignorespace
 HISTIGNORE="e:v:sb:$HISTIGNORE"
 
 # Git
-HISTIGNORE="g:gaa:gb:gba:gc:gca:gcaa:gcam:gci:gco:gd:gdi:gg:ggg:git:gl:gp:gst:$HISTIGNORE"
+HISTIGNORE="g:gaa:gb:gba:gc:gca:gcaa:gcam:gci:gco:gd:gdi:gg:ggg:git:gl:glo:glog:gp:gst:$HISTIGNORE"
 
 # JS
-HISTIGNORE="gr:grw:n:ni:no:$HISTIGNORE"
+HISTIGNORE="ni:nid:nci:$HISTIGNORE"
 
 # Manipulation
 HISTIGNORE="rmcd:$HISTIGNORE"

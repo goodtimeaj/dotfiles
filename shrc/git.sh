@@ -82,6 +82,7 @@ alias glog='git log --date-order --pretty="format:%C(yellow)%h%Cred%d %<(50)%Cre
 alias gl='glog --graph'
 alias gla='gl --all'
 alias glo='git log --oneline'
+alias gld='log --graph --format="format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%ar%C(reset)%C(auto)%d%C(reset)%n%s" --date-order'
 
 # Greps committed text
 gls() {

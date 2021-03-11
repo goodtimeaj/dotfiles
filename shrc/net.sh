@@ -1,8 +1,3 @@
-#
-# Thanks:
-# @mathiasbynens
-#
-
 # Flush Directory Service cache
 alias flush='dscacheutil -flushcache && killall -HUP mDNSResponder'
 
