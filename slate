@@ -14,7 +14,7 @@ config resizePercentOf screenSize
 ###############################################################################
 
 # Hyper Key
-alias hyper ctrl;shift;alt;cmd
+alias hyper ctrl;shift
 
 # Easy helpers for long variable names...
 alias sox screenOriginX
@@ -116,10 +116,7 @@ bind t:${hyper} focus 'Terminal'
 bind g:${hyper} focus 'Google Chrome'
 bind e:${hyper} focus 'Firefox'
 bind s:${hyper} focus 'Safari'
-bind v:${hyper} focus 'MacVim'
-bind u:${hyper} focus 'Sublime Text 2'
-bind x:${hyper} focus 'Xcode'
-bind i:${hyper} focus 'iTunes'
+bind v:${hyper} focus 'Visual Studio Code'
 bind p:${hyper} focus 'Preview'
 
 ###############################################################################
