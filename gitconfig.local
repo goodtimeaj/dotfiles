@@ -1,4 +1,4 @@
 # vim:ft=gitconfig:
 [user]
-	name = gregstallings
+	name = "gregstallings"
 	email = gregstallings@gmail.com
