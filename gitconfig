@@ -27,6 +27,6 @@
 	autocrlf = input
 	pager = less -iFQX
 [include]
-	path = .gitconfig.local
+	path = ~/.gitconfig.local
 [includeIf "gitdir:~/workplace/"]
-	path = .gitconfig.local
+	path = ~/workplace/.gitconfig.local
