@@ -79,10 +79,8 @@ for file in "${here}"/*; do
   target="${HOME}/.${filename}"
 
   if [ "$filename" != ".gitignore" ] &&
-     [ "$filename" != ".gitmodules" ] &&
      [ "$filename" != "bash_profile" ] &&
      [ "$filename" != "bin" ] &&
-     [ "$filename" != "bin-labs" ] &&
      [ "$filename" != "build" ] &&
      [ "$filename" != "install.sh" ] &&
      [ "$filename" != "lesskey" ] &&
@@ -137,13 +135,5 @@ for file in "${here}/bin"/*; do
   filename="$(basename "$file")"
   ln -sfv "${here}/bin/${filename}" "${HOME}/bin/${filename}"
 done
-
-# Link files in bin-labs to $HOME/bin
-if [ -d "${here}/bin-labs" ]; then
-  for file in "${here}/bin-labs"/*; do
-    filename="$(basename "$file")"
-    ln -sfv "${here}/bin-labs/${filename}" "${HOME}/bin/${filename}"
-  done
-fi
 
 exec /bin/bash -l
