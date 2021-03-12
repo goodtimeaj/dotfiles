@@ -13,6 +13,11 @@ git_current_branch() {
   cat "$(git rev-parse --git-dir 2>/dev/null)/HEAD" | sed -e 's/^.*refs\/heads\///'
 }
 
+# Returns the default branch
+git_default_branch() {
+  git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'
+}
+
 # `git status` if no arguments, `git` otherwise
 g() {
   if [ $# -eq 0 ]; then
@@ -35,7 +40,14 @@ alias gap='git add --patch'
 alias gau='git add --update'
 alias gb='git branch -v'
 alias gba='git branch -vv --all'
-alias gbd='git branch -D'
+
+# Delete Git branch
+gbd() {
+  git checkout $(git_default_branch) &&
+  git branch -D "$1"
+  echo
+  git branch -v --all
+}
 
 # Sets an upstream branch and rebases from it
 gbup() {
@@ -53,14 +65,10 @@ alias gch='git cherry-pick'
 # alias gci='git pull --rebase && rake && git push'
 alias gcl="${preferred_git} clone"
 
-# `git checkout master` if no arguments
+# Checks out default branch if no arguments
 gco() {
   if [ $# -eq 0 ]; then
-    git checkout master
-
-    if [ $? -eq 1 ]; then 
-      git checkout mainline
-    fi
+    git checkout "$(git_default_branch)"
   else
     git checkout "$@"
   fi
@@ -73,7 +81,6 @@ alias gdi='git diff --cached --find-renames'
 alias gf='git fetch'
 # Verbose `git status` since `g` is --short
 alias gg='git status'
-alias gin='git init'
 
 alias git-jump='c "$(find-git-working-dir 3)"'
 alias gj='git-jump'
@@ -88,8 +95,8 @@ git-new() {
 alias glog='git log --date-order --pretty="format:%C(yellow)%h%Cred%d %<(50)%Creset%s %>(13)%Cgreen%ar %Cblue%an%Creset"'
 alias gl='glog --graph'
 alias gla='gl --all'
+alias gld='git log --graph --format="format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%ar%C(reset)%C(auto)%d%C(reset)%n%s" --date-order'
 alias glo='git log --oneline'
-alias gld='log --graph --format="format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%ar%C(reset)%C(auto)%d%C(reset)%n%s" --date-order'
 
 # Greps committed text
 gls() {
@@ -104,7 +111,7 @@ alias gp='git push'
 alias gpl='git pull --ff-only'
 alias gpr='git pull --rebase'
 alias gpthis='gp origin $(git_current_branch)'
-alias grm='git rebase master'
+alias grm='git rebase "$(git_default_branch)"'
 alias grv='git remote -v'
 alias gs='git show'
 alias gsls='git diff-tree --no-commit-id --name-only -r HEAD'
