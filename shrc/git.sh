@@ -36,6 +36,13 @@ alias gau='git add --update'
 alias gb='git branch -v'
 alias gba='git branch -vv --all'
 alias gbd='git branch -D'
+
+# Sets an upstream branch and rebases from it
+gbup() {
+  git branch --set-upstream-to="${1}" &&
+  git rebase
+}
+
 alias gc='git commit -v'
 # Commit all changed files
 alias gca='git commit -v --all'
