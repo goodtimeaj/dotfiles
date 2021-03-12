@@ -8,12 +8,12 @@ if hash hub 2>/dev/null; then
   preferred_git=hub
 fi
 
-# Returns the current branch as a string
+# Returns the current branch name
 git_current_branch() {
   cat "$(git rev-parse --git-dir 2>/dev/null)/HEAD" | sed -e 's/^.*refs\/heads\///'
 }
 
-# Returns the default branch
+# Returns the default branch name
 git_default_branch() {
   git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'
 }
@@ -41,7 +41,7 @@ alias gau='git add --update'
 alias gb='git branch -v'
 alias gba='git branch -vv --all'
 
-# Delete Git branch
+# Deletes the given branch
 gbd() {
   git checkout $(git_default_branch) &&
   git branch -D "$1"
@@ -49,7 +49,7 @@ gbd() {
   git branch -v --all
 }
 
-# Sets an upstream branch and rebases from it
+# Sets the given upstream branch and rebases from it
 gbup() {
   git branch --set-upstream-to="${1}" &&
   git rebase
@@ -65,7 +65,7 @@ alias gch='git cherry-pick'
 # alias gci='git pull --rebase && rake && git push'
 alias gcl="${preferred_git} clone"
 
-# Checks out default branch if no arguments
+# Checks out the default branch if no arguments
 gco() {
   if [ $# -eq 0 ]; then
     git checkout "$(git_default_branch)"
@@ -78,27 +78,19 @@ alias gcoa='gco -- .'
 alias gcop='gco --patch'
 alias gd='git diff --find-renames'
 alias gdi='git diff --cached --find-renames'
+alias gdim='git diff --cached --minimal'
 alias gf='git fetch'
 # Verbose `git status` since `g` is --short
 alias gg='git status'
-
 alias git-jump='c "$(find-git-working-dir 3)"'
 alias gj='git-jump'
-
-# Creates a new git repo given a new directory name
-git-new() {
-  [ ! -d "$1" ] && mkdir "$1" &&
-  cd "$1" &&
-  git init
-}
-
 alias glog='git log --date-order --pretty="format:%C(yellow)%h%Cred%d %<(50)%Creset%s %>(13)%Cgreen%ar %Cblue%an%Creset"'
 alias gl='glog --graph'
 alias gla='gl --all'
 alias gld='git log --graph --format="format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%ar%C(reset)%C(auto)%d%C(reset)%n%s" --date-order'
 alias glo='git log --oneline'
 
-# Greps committed text
+# Greps commits for the given text
 gls() {
   query="$1"
   shift
@@ -119,3 +111,10 @@ alias gst='git stash'
 alias gstl='git stash list'
 alias gstp='git stash pop'
 alias gsts='git stash show'
+
+# Creates a new git repo given a new directory name
+git-new() {
+  [ ! -d "$1" ] && mkdir "$1" &&
+  cd "$1" &&
+  git init
+}
