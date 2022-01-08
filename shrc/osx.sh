@@ -27,6 +27,12 @@ o() {
   fi
 }
 
+# Prompt
+###############################################################################
+
+# Silence macOS bash deprecation warning
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 # System
 ###############################################################################
 
