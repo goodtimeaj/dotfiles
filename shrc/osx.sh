@@ -1,12 +1,7 @@
-# Exports
-###############################################################################
-
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-
 # History
 ###############################################################################
 
-HISTIGNORE="apps:appsh:bok:brews:casks:dl:dsstore:dt:kf:lib:libh:lk:not:o:restart:trash:vol:$HISTIGNORE"
+HISTIGNORE="apps:appsh:bok:brews:dl:dsstore:dt:kf:lib:libh:lk:not:o:restart:trash:vol:$HISTIGNORE"
 export HISTIGNORE
 
 # Navigation
@@ -14,9 +9,7 @@ export HISTIGNORE
 
 alias apps='c /Applications'
 alias appsh='c ~/Applications'
-alias bok='c /Volumes/g/books "$short_list_options"'
 alias brews='c /usr/local/Cellar'
-alias casks='c /opt/homebrew-cask/Caskroom'
 alias dl='c ~/Downloads'
 alias dt='c ~/Desktop'
 alias lib='c /Library "$short_list_options"'
