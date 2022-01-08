@@ -84,8 +84,6 @@ for file in "${here}"/*; do
      [ "$filename" != "build" ] &&
      [ "$filename" != "install.sh" ] &&
      [ "$filename" != "lesskey" ] &&
-     [ "$filename" != "LICENSE" ] &&
-     [ "$filename" != "README.md" ] &&
      [ "$filename" != "shrc" ]; then
     ln -sfv "$file" "$target"
   else
