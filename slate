@@ -94,8 +94,8 @@ bind l:${hyper} ${right-half}
 ###############################################################################
 
 # Throw to left or right monitor and resize to full screen
-bind [:${hyper} throw left resize
-bind ]:${hyper} throw right resize
+bind n:${hyper} throw left resize
+bind p:${hyper} throw right resize
 
 ###############################################################################
 # Example Focus Bindings
@@ -117,7 +117,6 @@ bind g:${hyper} focus 'Google Chrome'
 bind e:${hyper} focus 'Firefox'
 bind s:${hyper} focus 'Safari'
 bind v:${hyper} focus 'Visual Studio Code'
-bind p:${hyper} focus 'Preview'
 
 ###############################################################################
 # Example Window Hints
